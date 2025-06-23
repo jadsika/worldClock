@@ -3,30 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <title>World Clock</title>
   </head>
   <body>
-    <h1>World Clock</h1>
     <div class="container">
-      <select>
-        <option value="">Select a city ...</option>
-        <option value="">Accra</option>
-        <option value="">Seoul</option>
-        <option value="">Sydney</option>
-        <option value="">Ottawa</option>
-        <option value="">Buenos Aires</option>
-        <option value="">Paris</option>
-      </select>
-      <div class="cities">
-        <div class="city">Accra</div>
-        <div class="date">23rd June, 2025</div>
-        <div class="time">10:00 AM</div>
+      <div class="header">
+        <h1>World Clock</h1>
+        <p class="subtitle">Track time across different time zones</p>
       </div>
-      <div class="cities">
-        <div class="city">Paris</div>
-        <div class="date">23rd June, 2025</div>
-        <div class="time">10:00 AM</div>
+      <div class="city-selector">
+        <select>
+          <option value="">Select a city to add...</option>
+          <option value="">Accra</option>
+          <option value="">Seoul</option>
+          <option value="">Sydney</option>
+          <option value="">Ottawa</option>
+          <option value="">Buenos Aires</option>
+          <option value="">Paris</option>
+          <option value="">Tokyo</option>
+          <option value="">New York</option>
+        </select>
+      </div>
+      <div class="cities-container">
+        <div class="city-card">
+          <div class="city-info">
+            <div class="city-flag">🇬🇭</div>
+            <div class="city-details">
+              <div class="city-name">Accra</div>
+              <div class="timezone">Africa/Accra (GMT)</div>
+            </div>
+          </div>
+          <div class="time-section">
+            <div class="time">10:45 AM</div>
+            <div class="date">23rd June, 2025</div>
+          </div>
+          <div class="day-night">DAY</div>
+        </div>
+
+        <div class="city-card">
+          <div class="city-info">
+            <div class="city-flag">🇰🇷</div>
+            <div class="city-details">
+              <div class="city-name">Seoul</div>
+              <div class="timezone">Asia/Seoul (KST)</div>
+            </div>
+          </div>
+          <div class="time-section">
+            <div class="time">7:45 PM</div>
+            <div class="date">23rd June, 2025</div>
+          </div>
+          <div class="day-night">NIGHT</div>
+        </div>
+
+        <div class="city-card">
+          <div class="city-info">
+            <div class="city-flag">🇦🇺</div>
+            <div class="city-details">
+              <div class="city-name">Sydney</div>
+              <div class="timezone">Australia/Sydney (AEST)</div>
+            </div>
+          </div>
+          <div class="time-section">
+            <div class="time">8:45 PM</div>
+            <div class="date">23rd June, 2025</div>
+          </div>
+          <div class="day-night">NIGHT</div>
+        </div>
       </div>
     </div>
     <footer>

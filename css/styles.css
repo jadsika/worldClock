@@ -1,9 +1,293 @@
-h1 {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../media/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  font-family: "Nunito", sans-serif;
+  color: #2c3e50;
+  line-height: 1.5;
+  z-index: 0;
+}
+
+.container {
+  background: rgb(255, 255, 255);
+  max-width: 700px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.header {
   text-align: center;
-  color: #333;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+h1 {
+  font-size: 44px;
+  font-weight: 700;
+  color: rgb(247, 123, 143);
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  color: #7a8ca5;
+  font-size: 14px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.city-selector {
+  margin: 35px 0 25px;
+}
+
+select {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 16px;
+  border: 1px solid pink;
+  border-radius: 12px;
+  background-color: #fffafd;
+  color: #502c44;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b8cff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+  font-family: "Nunito", sans-serif;
+}
+
+select:focus {
+  outline: none;
+  border-color: #ff69b4;
+  box-shadow: 0 0 0 3px rgba(255, 91, 241, 0.15);
+}
+
+select:hover {
+  border-color: #c71585;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.cities-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.city-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f0f3fa;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.city-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: #e1e8f0;
+}
+
+.city-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, pink, #c71585);
+  border-radius: 16px 0 0 16px;
+}
+
+.city-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.city-flag {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff0fc, #ffe6fd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 5px 15px rgba(255, 91, 214, 0.15);
+}
+
+.city-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.city-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.timezone {
+  font-size: 0.95rem;
+  color: #a57a94;
+  font-weight: 500;
+}
+
+.time-section {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.time {
+  font-family: "Roboto Mono", monospace;
+  font-size: 28px;
+  font-weight: 500;
+  color: #2c3e50;
+  letter-spacing: -1px;
+  margin-bottom: 5px;
+  position: relative;
+  display: inline-block;
+}
+
+.time::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #5b8cff, #8c61ff);
+  border-radius: 3px;
+}
+
+.date {
+  font-size: 16px;
+  color: #7a8ca5;
+  font-weight: 500;
+  margin-top: 8px;
 }
 
 footer {
   text-align: center;
-  color: #666;
+  color: #7a8ca5;
+  max-width: 700px;
+  padding: 25px 20px;
+  margin-top: auto;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.github-link {
+  color: #ff5bb5;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.github-link:hover {
+  color: #ff61e5;
+}
+
+.github-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ff61c2;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.github-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (max-width: 750px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .time {
+    font-size: 2rem;
+  }
+
+  .city-name {
+    font-size: 1.3rem;
+  }
+
+  .city-flag {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .city-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .time-section {
+    text-align: left;
+    width: 100%;
+    padding-left: 65px;
+  }
+
+  .time::after {
+    left: 0;
+    right: auto;
+  }
+}
+
+.day-night {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255, 91, 200, 0.1);
+  color: #ff5be4;
+  margin-bottom: 5px;
 }
