@@ -2,6 +2,7 @@ function updateTime() {
   let accraElement = document.querySelector("#accra");
   let accraDateElement = accraElement.querySelector(".date");
   let accraTimeElement = accraElement.querySelector(".time");
+  let accraDayNightElement = accraElement.querySelector(".day-night");
   let accraTime = moment().tz("Africa/Accra");
 
   accraTimeElement.innerHTML = accraTime.format(
@@ -9,6 +10,9 @@ function updateTime() {
   );
 
   accraDateElement.innerHTML = accraTime.format("Do MMMM, YYYY");
+  let accraHour = accraTime.hour();
+  accraDayNightElement.innerHTML =
+    accraHour >= 6 && accraHour < 18 ? "DAY" : "NIGHT";
 
   //Seoul
 
@@ -22,6 +26,10 @@ function updateTime() {
   );
 
   seoulDateElement.innerHTML = seoulTime.format("Do MMMM, YYYY");
+  let seoulDayNightElement = seoulElement.querySelector(".day-night");
+  let seoulHour = seoulTime.hour();
+  seoulDayNightElement.innerHTML =
+    seoulHour >= 6 && seoulHour < 18 ? "DAY" : "NIGHT";
 
   //Sydney
   let sydneyElement = document.querySelector("#sydney");
@@ -34,6 +42,44 @@ function updateTime() {
   );
 
   sydneyDateElement.innerHTML = sydneyTime.format("Do MMMM, YYYY");
+  let sydneyDayNightElement = sydneyElement.querySelector(".day-night");
+  let sydneyHour = sydneyTime.hour();
+  sydneyDayNightElement.innerHTML =
+    sydneyHour >= 6 && sydneyHour < 18 ? "DAY" : "NIGHT";
 }
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.split("/")[1].replace("_", " ");
+  let cityTime = moment().tz(cityTimeZone);
+  let cityHour = cityTime.hour();
+  let dayNight = cityHour >= 6 && cityHour < 18 ? "DAY" : "NIGHT";
+
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `
+  <div class="city">
+    <div class="city-card">
+      <div class="city-info">
+        <div class="city-details">
+          <div class="city-name">${cityName}</div>
+          <div class="timezone">${cityTimeZone}</div>
+        </div>
+      </div>
+      <div class="time-section">
+        <div class="time">${cityTime.format(
+          "h:mm:ss"
+        )} <small>${cityTime.format("A")}</small></div>
+        <div class="date">${cityTime.format("Do MMMM, YYYY")}</div>
+      </div>
+      <div class="day-night">${dayNight}</div>
+
+    </div>
+  </div>
+`;
+
+}
+
 updateTime();
 setInterval(updateTime, 1000);
+
+let citiesSelectElement = document.querySelector("#city");
+citiesSelectElement.addEventListener("change", updateCity);
