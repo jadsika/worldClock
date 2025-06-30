@@ -77,6 +77,7 @@ function updateCity(event) {
 
     </div>
   </div>
+  <a href="/">Back to World Clock</a>
 `;
 }
 

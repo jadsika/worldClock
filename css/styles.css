@@ -98,6 +98,10 @@ option {
   gap: 10px;
   margin-top: 40px;
 }
+a {
+  text-decoration: none;
+  color: #c71585;
+}
 
 .city-card {
   background: #ffffff;
