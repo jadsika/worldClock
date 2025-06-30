@@ -5,8 +5,7 @@
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../media/bg.png");
+  background-image: url("../media/bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -17,7 +16,6 @@ body {
   font-family: "Nunito", sans-serif;
   color: #2c3e50;
   line-height: 1.5;
-  z-index: 0;
 }
 
 .container {
@@ -29,9 +27,6 @@ body {
   padding: 20px 30px;
   border-radius: 20px;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
 }
 
 .header {
